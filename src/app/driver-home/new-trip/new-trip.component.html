@@ -1,0 +1,66 @@
+<div class="card">
+  <ion-grid fixed class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="../../assets/user.png">
+            </ion-avatar>
+            <ion-label>
+              <h3>{{activeTrip.CustomerName}}</h3>
+              <p>{{activeTrip.UnitName}}</p>
+            </ion-label>
+          </ion-item>
+          <ion-card-content class="ion-no-padding">
+            <ion-list>
+              <ion-item class="location-address ">
+                <ion-label>مبدا: {{activeTrip.FromAddress}}</ion-label>
+                <ion-icon style="color: rgb(0, 86, 247);" size="large" name="locate-outline" slot="start"></ion-icon>
+              </ion-item>
+              <ion-item class="location-address ">
+                <ion-label> مقصد:{{activeTrip.ToAddress}}</ion-label>
+
+                <ion-icon style="color: rgb(0, 206, 51);" size="large" name="location-outline" slot="start">
+                </ion-icon>
+              </ion-item>
+              <ion-item button>
+                <ion-chip color="success">
+                  <ion-icon name="resize-outline"></ion-icon>
+                  <ion-label>{{ this.activeTrip.distance}}</ion-label>
+                </ion-chip>
+                <ion-chip color="danger">
+                  <ion-icon name="time-outline"></ion-icon>
+                  <ion-label>{{ this.activeTrip.duration}}</ion-label>
+                </ion-chip>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+
+          <ion-footer>
+            <!-- -----------------------------Accept Trip------------------------------------ -->
+            <ion-row>
+              <ion-col center text-center>
+                <ion-button [disabled]="actionWaiting_accept" color="success" expand="block"
+                  (click)="acceptTripClick()">
+                  <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+                  <div>قبول سفر</div>
+                  &nbsp;<ion-spinner *ngIf="actionWaiting_accept"></ion-spinner>
+                </ion-button>
+
+              </ion-col>
+              <ion-col center text-center>
+                <ion-button [disabled]="actionWaiting_reject" color="danger" expand="block" (click)="rejectTripClick()">
+                  <ion-icon color="" name="close-circle-outline" slot="start"></ion-icon>
+                  <div>رد درخواست</div>
+                  &nbsp;<ion-spinner *ngIf="actionWaiting_reject"></ion-spinner>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-footer>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

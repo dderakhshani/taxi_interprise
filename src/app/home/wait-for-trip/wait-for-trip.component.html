@@ -1,0 +1,57 @@
+<ion-grid fixed>
+
+  <ion-row>
+
+    <ion-col size="12">
+      <ion-list>
+        <ion-item>
+          <ion-label>مبدا:{{activeTrip.FromAddress}}</ion-label>
+          <ion-icon style="color: rgb(0, 86, 247);" name="locate-outline" slot="start"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>مقصد:{{activeTrip.ToAddress}}</ion-label>
+          <ion-icon style="color: rgb(0, 206, 51);" name="location-outline" slot="start"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row style="font-size: 12px;padding: 10px;">
+    <ion-col class="ion-text-center">
+      <ion-icon style="font-size: 21px;color: gray;" name="car-sport-outline"></ion-icon>
+      <div>
+        <span>در انتظار تخصیص راننده</span>
+      </div>
+    </ion-col>
+
+    <ion-col class="ion-text-center">
+      <ion-icon style="font-size: 21px;color: gray;" name="business-outline"></ion-icon>
+      <div>
+        <ion-label>{{activeTrip.TypeTripName}}</ion-label>
+        <!-- <ion-label *ngIf="activeTrip.TypeTrip==1">درون سازمانی</ion-label>
+        <ion-label *ngIf="activeTrip.TypeTrip==2">برون سازمانی</ion-label> -->
+      </div>
+
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-icon style="font-size: 21px;color: gray;" name="time-outline"></ion-icon>
+      <div> {{activeTrip.PersianRequestTime}}</div>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-icon style="font-size: 21px;color: gray;" name="resize-outline"></ion-icon>
+      <div> {{activeTrip.distance}}</div>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-icon style="font-size: 21px;color: gray;" name="time-outline"></ion-icon>
+      <div> {{activeTrip.duration}}</div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-button [disabled]="actionWaiting" (click)="onClick()" color="danger" expand="full">
+        لغو درخواست سفر
+        &nbsp;<ion-spinner *ngIf="actionWaiting"></ion-spinner>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

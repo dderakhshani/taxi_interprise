@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>راننده ترابری</ion-title>
+
+    <ion-toggle slot="end" name="active" color="success" checked></ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce id="main-content">
+
+  <div class="loading-container" *ngIf="pageLoading">
+    <div class="loading-wrapper" class="ion-text-center">
+      <ion-spinner color="primary"></ion-spinner>
+    </div>
+  </div>
+  <div id="map_canvas">
+
+
+  </div>
+
+
+</ion-content>
+<ion-bottom-sheet *ngIf="!pageLoading && activeTrip!=null" [(state)]="sheetState" [title]="sheetTitle"
+  [titleCentered]="true" [hideCloseButton]="true" [hideDragIcon]="true" [disableDrag]="true" [dockedHeight]="340"
+  [minHeight]="50">
+
+
+
+
+  <new-trip *ngIf="viewState==1" [activeTrip]="activeTrip" [actionWaiting_accept]="actionWaiting_accept"
+    [actionWaiting_reject]="actionWaiting_reject" (onAcceptTrip)="acceptTrip()" (onRejectTrip)="rejectTrip()">
+  </new-trip>
+
+  <reject-trip *ngIf="viewState==2" [activeTrip]="activeTrip" [actionWaiting_reject]="actionWaiting_reject"
+    (onRejectTrip)="rejectTrip()"></reject-trip>
+
+  <start-trip *ngIf="viewState==3" [activeTrip]="activeTrip" [actionWaiting_accept]="actionWaiting_accept"
+    (startTrip)="startTrip()"></start-trip>
+
+
+  <on-trip *ngIf="viewState==4" [activeTrip]="activeTrip" [actionWaiting_accept]="actionWaiting_accept"
+    (onEndTrip)="endTrip()"></on-trip>
+
+</ion-bottom-sheet>

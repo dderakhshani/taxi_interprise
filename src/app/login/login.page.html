@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>ورود به برنامه</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <br />
+    <div class="ion-text-center">
+      <img src="../../assets/icon/logo.png" />
+    </div>
+    <ion-label>سیستم ترابری سازمانی</ion-label>
+    <br />
+    <br />
+  </div>
+  <div class="footer">
+    <img src="../../assets/taxi-service2.jpg" />
+  </div>
+  <form [formGroup]="loginForm">
+
+    <ion-item>
+      <ion-input formControlName="userName" type="text" placeholder="نام کاربری">
+      </ion-input>
+      <ion-icon slot="start" name="person"></ion-icon>
+    </ion-item>
+
+    <ion-row
+      *ngIf="loginForm.get('userName').invalid && (loginForm.get('userName').dirty || loginForm.get('userName').touched)">
+      <ion-label color="danger">لطفا نام کاربر را وارد نمایید
+      </ion-label>
+    </ion-row>
+
+    <ion-item>
+      <ion-input formControlName="password" type="password" placeholder="رمز عبور">
+      </ion-input>
+      <ion-icon slot="start" name="key"></ion-icon>
+    </ion-item>
+
+    <ion-row
+      *ngIf="loginForm.get('password').invalid  && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+      <ion-label color="danger">رمز عبور را وارد نمایید</ion-label>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size=12>
+        <br />
+
+        <a href="#">رمز عبور را فراموش کردید؟</a>
+        <br />
+      </ion-col>
+    </ion-row>
+
+    <ion-button [disabled]="actionWaiting" expand="full" shape="round" (click)="onSubmit()">ورود به برنامه
+      &nbsp;<ion-spinner *ngIf="actionWaiting"></ion-spinner>
+    </ion-button>
+
+
+
+  </form>
+
+</ion-content>

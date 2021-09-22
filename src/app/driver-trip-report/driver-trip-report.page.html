@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>سفر های من</ion-title>
+
+  </ion-toolbar>
+  <ion-toolbar>
+
+    <ion-button slot="end" fill="clear">
+      فیلتر
+      <ion-icon color="primary" size="large" name="funnel-outline"></ion-icon>
+    </ion-button>
+    <ion-button slot="end" fill="clear">
+      مرتب سازی
+      <ion-icon color="primary" size="large" name="swap-vertical-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngFor="let trip of trips">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-list>
+            <ion-item>
+              <span>مبدا: {{trip.FromAddress}}</span>
+              <ion-icon style="color: rgb(0, 86, 247);" name="locate-outline" slot="start"></ion-icon>
+
+            </ion-item>
+            <ion-item>
+              <span>آدرس مقصد سفر{{trip.ToAddress}}</span>
+
+              <ion-icon style="color: rgb(0, 206, 51);" name="location-outline" slot="start"></ion-icon>
+
+            </ion-item>
+            <ion-item>
+              <ion-chip color="success">
+                <ion-icon name="time"></ion-icon>
+                <ion-label>شروع :{{ this.trip.PersianRequestTime.split(' ')[1]}}</ion-label>
+              </ion-chip>
+              <ion-chip color="danger">
+                <ion-icon name="time"></ion-icon>
+                <ion-label>پایان :{{ this.trip.PersianEndTime.split(' ')[1]}}</ion-label>
+              </ion-chip>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+
+
+
+        <ion-col size="12" *ngIf="trip.DriverTrip!=null">
+          <ion-item-divider>
+            <span>نظر مسافر:</span>
+          </ion-item-divider>
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-icon size="large" color="secondary" name="chatbox-outline"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+              <!-- <h3>
+                {{trip.Feedback}}
+              </h3> -->
+              <p>
+                <ion-chip color="secondary">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-label> {{trip.Score}}</ion-label>
+                </ion-chip>
+                {{trip.Feedback}}
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+</ion-content>

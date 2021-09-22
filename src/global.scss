@@ -1,0 +1,103 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+$font-path: "./assets/fonts";
+
+@font-face {
+  font-family: "IRANSansWeb";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IRANSansWeb Light"),
+  local("IRANSansWeb-Light"),
+  url("#{$font-path}/IRANSansWeb-light.woff2") format("woff2"),
+  url("#{$font-path}/IRANSansWeb-light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IRANSansWeb";
+  font-style: normal;
+  font-weight: 300;
+  src: local("IRANSansWeb"),
+  local("IRANSansWeb-Regular"),
+  url("#{$font-path}/IRANSansWeb-regular.woff2") format("woff2"),
+  url("#{$font-path}/IRANSansWeb-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IRANSansWeb";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IRANSansWeb Medium"),
+  local("IRANSansWeb-Medium"),
+  url("#{$font-path}/IRANSansWeb-medium.woff2") format("woff2"),
+  url("#{$font-path}/IRANSansWeb-medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IRANSansWeb";
+  font-style: normal;
+  font-weight: 600;
+  src: local("IRANSansWeb Bold"),
+  local("IRANSansWeb-Bold"),
+  url("#{$font-path}/IRANSansWeb-bold.woff2") format("woff2"),
+  url("#{$font-path}/IRANSansWeb-bold.ttf") format("truetype");
+}
+
+
+* {
+  --ion-font-family: 'IRANSansWeb' !important;
+  font-family: 'IRANSansWeb' !important;
+}
+
+body {
+  direction: rtl;
+}
+
+.picker-hour {
+  button {
+    text-align: right;
+  }
+}
+
+.picker-minute {
+  button {
+    text-align: left;
+  }
+}
+
+.loading-wrapper {
+  width: 100%;
+  margin: 1%;
+}
+
+.loading-container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+}

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>تنظیمات</ion-title>
+
+    <ion-toggle slot="end" name="active" color="success" checked></ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <input type="text" [(ngModel)]="fcm_token" />
+</ion-content>

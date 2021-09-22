@@ -1,0 +1,71 @@
+#main-content {
+  position: relative;
+
+}
+
+#map_canvas {
+  /* Must bigger size than 100x100 pixels */
+  width: 100%;
+  height: 100%;
+}
+
+#action-pane {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  left: 10px;
+}
+
+#trip-type {
+  width: 250px;
+  position: absolute;
+  top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  background: #ccc;
+}
+
+.loc-icon {
+  font-size: 16px;
+  color: rgb(0, 78, 245);
+}
+
+
+
+ion-card {
+  margin: 5px;
+}
+
+ion-grid {
+  padding: 0;
+
+  ion-col {
+    padding: 1px;
+  }
+}
+
+
+
+ion-list {
+  padding: 0;
+}
+
+.segment-button-checked {
+  background: white !important;
+}
+
+.avatar {
+  margin: auto;
+}
+
+.feedback-selected {
+  --ion-background: var(--ion-color-secondary-shade);
+  background-color: var(--ion-color-secondary-shade);
+  color: white;
+}
+
+.location-address {
+  font-size: 13px;
+}

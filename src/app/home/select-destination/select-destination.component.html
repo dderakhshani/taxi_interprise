@@ -1,0 +1,43 @@
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12">
+      <ion-card class="card">
+        <ion-list>
+          <ion-item button (click)="onChangeOriginClick()">
+            <span class="location-address">مبدا: {{activeTrip.FromAddress}}</span>
+            <ion-icon style="color: rgb(0, 86, 247);" name="locate-outline" slot="start"></ion-icon>
+            <ion-button fill="clear" shape="round" slot="end">
+              تغییر مبدا
+            </ion-button>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="جستجوی مقصد سفر"></ion-input>
+            <ion-icon style="color: rgb(0, 206, 51);" name="location-outline" slot="start"></ion-icon>
+          </ion-item>
+        </ion-list>
+
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-list>
+        <ion-item>
+          <span>محل کار</span>
+          <ion-icon name="star-outline" slot="start"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <span>اداری</span>
+          <ion-icon name="star-outline" slot="start"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button (click)="onClick()" color="success" expand="full">
+        تایید مقصد
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

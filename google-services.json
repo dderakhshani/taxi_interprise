@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "725771143420",
+    "project_id": "foladtaxi",
+    "storage_bucket": "foladtaxi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725771143420:android:76f5eec5f83bd5dd40ef79",
+        "android_client_info": {
+          "package_name": "com.innomalist.taxi.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725771143420-rv6okj6uttqigo606h87fs80ic7r97ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo6OpN-pQn82Bw1GYbbAVjz14sVAQ0vnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "725771143420-rv6okj6uttqigo606h87fs80ic7r97ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725771143420:android:5381145c4bf2bd8b40ef79",
+        "android_client_info": {
+          "package_name": "com.innomalist.taxi.rider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725771143420-rv6okj6uttqigo606h87fs80ic7r97ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo6OpN-pQn82Bw1GYbbAVjz14sVAQ0vnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "725771143420-rv6okj6uttqigo606h87fs80ic7r97ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725771143420:android:47b3116474dd781a40ef79",
+        "android_client_info": {
+          "package_name": "io.ionic.taxienterprise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725771143420-rv6okj6uttqigo606h87fs80ic7r97ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo6OpN-pQn82Bw1GYbbAVjz14sVAQ0vnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "725771143420-rv6okj6uttqigo606h87fs80ic7r97ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

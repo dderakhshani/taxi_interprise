@@ -1,0 +1,33 @@
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12">
+      <ion-card class="card">
+        <ion-item>
+          <ion-input placeholder="جستجوی مبدا سفر"></ion-input>
+          <ion-icon size="large" name="locate-outline" slot="start"></ion-icon>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-list>
+        <ion-item>
+          <span>خانه</span>
+          <ion-icon name="star-outline" slot="start"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <span>مرکز</span>
+          <ion-icon name="star-outline" slot="start"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button (click)="onClick()" color="secondary" expand="full" fill="solid">
+        تایید مبدا
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

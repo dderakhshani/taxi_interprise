@@ -1,0 +1,47 @@
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button (click)="onSelectStopClick()" size="large" color="secondary" fill="outline" expand="block">
+        <ion-icon name="location-outline" size="large" slot="start"></ion-icon>
+        انتخاب مقصد دوم
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button (click)="onSelectRoundTripClick()" *ngIf="!roundTrip" size="large" color="secondary" fill="outline"
+        expand="block">
+        <ion-icon name="git-compare" size="large" slot="start"></ion-icon>
+        رفت و برگشت به مبدا
+      </ion-button>
+
+      <ion-button (click)="onSelectRoundTripClick()" *ngIf="roundTrip" size="large" color="secondary" fill="solid"
+        expand="block">
+        <ion-icon name="git-compare" size="large" slot="start"></ion-icon>
+        رفت و برگشت به مبدا
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button (click)="onSelectStopClick()" size="large" color="secondary" fill="outline" expand="block">
+        <ion-icon name="time" size="large" slot="start"></ion-icon>
+        توقف در مسیر
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button (click)="onSelectStopClick()" size="large" color="secondary" fill="outline" expand="block">
+        <span *ngIf="tripStopTime!=''">{{tripStopTime}}</span>
+        <span *ngIf="tripStopTime==''">مدت توقف</span>
+      </ion-button>
+    </ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="onClick()" color="success" expand="full">
+        تایید
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

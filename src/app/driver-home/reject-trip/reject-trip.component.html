@@ -1,0 +1,26 @@
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12">
+      <ion-list>
+        <ion-list-header>دلایل عدم پذیرش سفر</ion-list-header>
+        <ion-item button *ngFor="let item of rejectReasons" (click)="setRejectReason(item)">
+          <ion-label>{{item.title}}</ion-label>
+          <ion-checkbox slot="start" [(ngModel)]="item.isChecked"></ion-checkbox>
+        </ion-item>
+        <ion-list-header>سایر دلایل</ion-list-header>
+        <ion-item>
+          <ion-textarea placeholder="شرح عدم پذیرش"></ion-textarea>
+        </ion-item>
+      </ion-list>
+
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button (click)="onRejectClick()" [disabled]="actionWaiting_reject" color="secondary" expand="full"
+        fill="solid">
+        ثبت دلیل و رد سفر
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

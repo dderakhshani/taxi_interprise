@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>درخواست سفر</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce id="main-content">
+  <div class="loading-container" *ngIf="pageLoading">
+    <div class="loading-wrapper" class="ion-text-center">
+      <ion-spinner color="primary"></ion-spinner>
+    </div>
+  </div>
+
+  <div id="map_canvas">
+
+
+  </div>
+  <ion-segment *ngIf="viewState<6" [disabled]="viewState>1" mode="ios" id="trip-type" value="internal"
+    (ionChange)="tripTypeChanged($event)">
+    <ion-segment-button value="internal" layout="icon-start">
+      <ion-label>درون سازمانی</ion-label>
+      <ion-icon name="business"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="external" layout="icon-start">
+      <ion-label>برون سازمانی</ion-label>
+      <ion-icon name="earth"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-content>
+<ion-bottom-sheet *ngIf="!pageLoading" [(state)]="sheetState" [title]="actionPaneTitle" [hideCloseButton]="true"
+  [titleCentered]="true" [hideDragIcon]="true" [disableDrag]="true" [dockedHeight]="dockedHeight" [minHeight]="50">
+
+  <!-- -----------------Select Origin--------------------------- -->
+  <select-origin *ngIf="viewState==1" [activeTrip]="tempTrip" (onConfirm)="onConfirmOrigin()"></select-origin>
+
+  <!-- -----------------Select Destination--------------------------- -->
+  <select-destination *ngIf="viewState==2" [activeTrip]="tempTrip" (onConfirm)="onConfirmDestination()"
+    (onChangeOrigin)="changeOrigin()">
+  </select-destination>
+
+  <!-- -----------------Request Trip--------------------------- -->
+  <request-trip *ngIf="viewState==3" [activeTrip]="tempTrip" [(tripTime)]="tripTime" (onConfirm)="requestTrip()"
+    (onChangeOrigin)="changeOrigin()" (onChangeDestination)="changeDestination()" (onSelectOption)="onSelectOption()"
+    (onSelectTime)="onSelectTime()">
+  </request-trip>
+
+  <!-- -----------------SelectOptions--------------------------- -->
+  <select-options *ngIf="viewState==5" [tripStopTime]="tripStopTime" [roundTrip]="roundTrip" (onConfirm)="setState(3)"
+    (onSelectRoundTrip)="onSelectRoundTrip()" (onSelectStop)="selectStop()">
+  </select-options>
+
+  <!-- -----------------Wait for Trip--------------------------- -->
+  <wait-for-trip *ngIf="viewState==6" [activeTrip]="activeTrip" [actionWaiting]="actionWaiting"
+    (onConfirm)="cancelTrip()"></wait-for-trip>
+
+  <!-- -----------------Wait For Driver--------------------------- -->
+  <wait-for-driver *ngIf="viewState==7" [activeTrip]="activeTrip" [actionWaiting]="actionWaiting"
+    (onConfirm)="cancelTrip()"></wait-for-driver>
+
+  <!-- -----------------[On Trip]--------------------------- -->
+  <on-trip *ngIf="viewState==8" [activeTrip]="activeTrip" [actionWaiting]="actionWaiting">
+  </on-trip>
+
+  <!-- -----------------End Trip--------------------------- -->
+  <end-trip-feedback *ngIf="viewState==9" (onConfirm)="onFeedback()" [(activeTrip)]="activeTrip"
+    [actionWaiting]="actionWaiting"></end-trip-feedback>
+</ion-bottom-sheet>
